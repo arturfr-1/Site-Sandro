@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandrinho Tatuagens | Nossa Senhora da Glória - SE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="logosandrinho.jpg" type="image/jpg">
+    <!-- Fontes limpas e naturais -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-preto: #121212;
+            --cor-preto-suave: #1e1e1e;
+            --cor-vermelho: #8a0c0c; /* Vermelho mais natural, cor de tinta */
+            --cor-vermelho-claro: #b11515;
+            --cor-branco: #f8f8f8;
+            --cor-cinza: #a0a0a0;
+            --fonte-titulo: 'Poppins', sans-serif;
+            --fonte-corpo: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--fonte-corpo);
+            background-color: var(--cor-preto);
+            color: var(--cor-branco);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Cabeçalho Fixo */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            z-index: 1000;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-placeholder {
+            width: 40px;
+            height: 40px;
+            background-color: var(--cor-preto-suave);
+            border: 1px dashed var(--cor-vermelho-claro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: var(--cor-cinza);
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .nome-negocio {
+            font-family: var(--fonte-titulo);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--cor-branco);
+        }
+
+        .nome-negocio span {
+            color: var(--cor-vermelho-claro);
+            font-weight: 700;
+        }
+
+        .btn-wpp {
+            background-color: var(--cor-vermelho);
+            color: var(--cor-branco);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-family: var(--fonte-corpo);
+            font-weight: 600;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+            font-size: 0.9rem;
+            display: inline-block;
+            border: none;
+        }
+
+        .btn-wpp:hover {
+            background-color: var(--cor-vermelho-claro);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 5% 40px;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.95)), url('shopping.png') no-repeat center center/cover;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-family: var(--fonte-titulo);
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-content h1 span {
+            color: var(--cor-vermelho-claro);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #d1d1d1;
+            max-width: 550px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+
+        .btn-wpp-grande {
+            padding: 15px 35px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Seções Gerais */
+        section {
+            padding: 70px 5%;
+        }
+
+        .titulo-secao {
+            font-family: var(--fonte-titulo);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 10px;
+            color: var(--cor-branco);
+            font-weight: 600;
+        }
+
+        .titulo-secao span {
+            color: var(--cor-vermelho-claro);
+        }
+
+        .subtitulo-secao {
+            text-align: center;
+            color: var(--cor-cinza);
+            margin-bottom: 40px;
+            font-size: 1rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Serviços */
+        .grid-servicos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .card-servico:nth-child(4) {
+            grid-column: 2;
+        }
+
+        .card-servico {
+            background-color: var(--cor-preto-suave);
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 3px solid var(--cor-vermelho);
+        }
+
+        .card-servico h3 {
+            font-family: var(--fonte-titulo);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--cor-branco);
+            font-weight: 600;
+        }
+
+        .card-servico p {
+            color: #b5b5b5;
+            font-size: 0.95rem;
+        }
+
+        /* Diferenciais */
+        #diferenciais {
+            background-color: var(--cor-preto-suave);
+        }
+
+        .grid-diferenciais {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .item-diferencial h3 {
+            font-family: var(--fonte-titulo);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--cor-vermelho-claro);
+        }
+
+        .item-diferencial p {
+            color: #b5b5b5;
+            font-size: 0.95rem;
+        }
+
+        /* Galeria */
+        .grid-galeria {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .foto-placeholder {
+            aspect-ratio: 1/1;
+            background-color: var(--cor-preto-suave);
+            border: 1px solid #333;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 0.85rem;
+            text-align: center;
+            transition: border-color 0.3s, color 0.3s;
+        }
+
+        .foto-placeholder:hover {
+            border-color: var(--cor-vermelho-claro);
+            color: var(--cor-branco);
+        }
+
+        /* CTA Final */
+        #cta-final {
+            text-align: center;
+            background-color: var(--cor-preto);
+            padding: 100px 5%;
+        }
+
+        #cta-final h2 {
+            font-family: var(--fonte-titulo);
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--cor-branco);
+            font-weight: 700;
+        }
+
+        #cta-final h2 span {
+            color: var(--cor-vermelho-claro);
+        }
+
+        #cta-final p {
+            font-size: 1.1rem;
+            color: #d1d1d1;
+            margin-bottom: 30px;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 40px 5%;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        footer .nome-negocio {
+            margin-bottom: 10px;
+            display: block;
+            font-size: 1.2rem;
+        }
+
+        footer p {
+            color: var(--cor-cinza);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .redes-sociais {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .redes-sociais a {
+            color: var(--cor-cinza);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .redes-sociais a:hover {
+            color: var(--cor-vermelho-claro);
+        }
+
+        /* Botão Flutuante WhatsApp */
+        .wpp-fixo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+
+        .wpp-fixo svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        @media (max-width: 600px) {
+            .nome-negocio { font-size: 1.2rem; }
+            .logo-placeholder { display: none; } /* Esconde logo no mobile pra caber melhor */
+            header .btn-wpp { padding: 8px 15px; font-size: 0.85rem; }
+            .hero-content h1 { font-size: 2rem; }
+            section { padding: 50px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-placeholder"><img src="logosandrinho.jpg" alt="logo" width="40" height="40"></div>
+            <div class="nome-negocio">Sandrinho <span>Tatuagens</span></div>
+        </div>
+        <a href="https://wa.me/557999187652?text=Oi%20Sandrinho!%20Vim%20pelo%20site%20e%20quero%20falar%20sobre%20uma%20tatuagem." class="btn-wpp" target="_blank">Chamar no WhatsApp</a>
+    </header>
+
+    <!-- Seção Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sua ideia virando <span>tatuagem</span>.</h1>
+            <p>Aqui a gente desenha do zero com você, faz rápido e cuida de cada detalhe.</p>
+            <a href="https://wa.me/557999187652?text=Oi%20Sandrinho!%20Quero%20agendar%20um%20horário." class="btn-wpp btn-wpp-grande" target="_blank">Marcar um horário</a>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos">
+        <h2 class="titulo-secao">O que eu <span>faço</span></h2>
+        
+        <div class="grid-servicos">
+            <div class="card-servico">
+                <h3>Desenho Exclusivo</h3>
+                <p>Você fala a ideia e eu desenho do seu jeito. A arte é criada do zero.</p>
+            </div>
+            <div class="card-servico">
+                <h3>Rapidez no Traço</h3>
+                <p>Trabalho ágil sem perder o acabamento e a qualidade. Minimizamos o desconforto com técnica e rapidez.</p>
+            </div>
+            <div class="card-servico">
+                <h3>Retoque de Tatuagem</h3>
+                <p>Renove aquela tatuagem antiga ou que perdeu a cor. Damos vida nova às suas tattoos anteriores.</p>
+            </div> 
+            <div class="card-servico">
+                <h3>Atendimento Agendado</h3>
+                <p>Exclusividade para você. Atendimento por agendamento para garantir que sua ideia receba toda a atenção necessária.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section id="diferenciais">
+        <h2 class="titulo-secao">Por que fazer <span>comigo</span>?</h2>
+        
+        <div class="grid-diferenciais">
+            <div class="item-diferencial">
+                <h3>Profissionalismo</h3>
+                <p>Ambiente limpo, materiais de qualidade e atendimento de respeito do início ao fim.</p>
+            </div>
+            <div class="item-diferencial">
+                <h3>Arte com o Cliente</h3>
+                <p>Criamos a arte junto com você para que represente sua essência.</p>
+            </div>
+            <div class="item-diferencial">
+                <h3>Horário Marcado</h3>
+                <p>Você chega na hora certa e é prontamente atendido.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfólio/Galeria -->
+    <section id="portfolio">
+        <h2 class="titulo-secao">Já passou <span>por aqui</span></h2>
+        <p class="subtitulo-secao">Um pedaço do meu trabalho.</p>
+        
+        <div class="grid-galeria">
+            <div class="foto-placeholder">FOTO 1</div>
+            <div class="foto-placeholder">FOTO 2</div>
+            <div class="foto-placeholder">FOTO 3</div>
+            <div class="foto-placeholder">FOTO 4</div>
+            <div class="foto-placeholder">FOTO 5</div>
+            <div class="foto-placeholder">FOTO 6</div>
+        </div>
+        <div class="redes-sociais">
+            <div class="redes-sociais">
+    <a href="https://www.instagram.com/sandrinhotatuagens/" target="_blank"> Clique aqui e dê uma olhada no meu Instagram!
+        <img src="instagram.png" alt="Instagram" width="20" height="20">
+    </a>
+        </div>
+    </section>
+    <section id="localizacao">
+            <h2 class="titulo-secao">Nos encontre <span>por aqui</span></h2>
+            <p class="subtitulo-secao">Shopping Avelan 2º piso - Nossa Senhora da Glória - Sergipe</p>
+            
+            <div style="max-width: 800px; margin: 40px auto; border-radius: 8px; overflow: hidden; height: 400px;">
+                <iframe src="https://www.google.com/maps/search/shopping+avelan+segundo+piso/@-10.2207705,-37.4251661,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDcyNy4wIKXMDSoASAFQAw%3D%3D" width="100%" height="100%" style="border:none;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    <!-- CTA Final -->
+    <section id="cta-final">
+        <h2>Bora tirar a ideia <span>do papel</span>?</h2>
+        <p>Envie uma mensagem no WhatsApp para agendarmos sua tatuagem.</p>
+        <a href="https://wa.me/557999187652?text=Oi%20Sandrinho!%20Vamos%20agendar%20um%20horário." class="btn-wpp btn-wpp-grande" target="_blank">Mandar mensagem agora</a>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="nome-negocio">Sandrinho <span>Tatuagens</span></div>
+        <p>Shopping Avelan 2º piso - Nossa Senhora da Glória - Sergipe</p>
+        <p>&copy; 2026 Sandrinho Tatuagens.</p>
+        <div class="redes-sociais">
+            <div class="redes-sociais">
+    <a href="https://www.instagram.com/sandrinhotatuagens/" target="_blank"> Veja meu trabalho no Instagram
+        <img src="instagram.png" alt="Instagram" width="20" height="20">
+    </a>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/557999187652?text=Oi%20Sandrinho!%20Vim%20pelo%20site,%20quero%20agendar%20um%20horário." class="wpp-fixo" target="_blank" title="Fale no WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+
+</body>
+</html>
